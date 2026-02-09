@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Endless Dev Playground</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <img src="assets/endless.png" alt="Endless Logo" />
+  <h1>Endless Dev Playground</h1>
+</header>
+
+<main>
+  <section class="controls">
+    <h2>Simulation Settings</h2>
+
+    <label>Action Type</label>
+    <select id="actionType">
+      <option value="transfer">Transfer</option>
+      <option value="stake">Stake</option>
+      <option value="vote">Vote</option>
+      <option value="deploy">Deploy Contract</option>
+    </select>
+
+    <label>Gas Limit</label>
+    <input type="range" id="gasLimit" min="50000" max="300000" value="150000" />
+    <span id="gasValue">150000</span>
+
+    <label>Network Load</label>
+    <select id="networkLoad">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <label>Validator Count</label>
+    <input type="number" id="validators" value="15" min="5" max="50" />
+
+    <button id="runBtn">Run Simulation</button>
+  </section>
+
+  <section class="visual">
+    <h2>Transaction Flow</h2>
+    <div class="flow">
+      <div class="node" id="user">User</div>
+      <div class="node" id="mempool">Mempool</div>
+      <div class="node" id="validator">Validator</div>
+      <div class="node" id="block">Block</div>
+      <div class="node" id="final">Finalized</div>
+    </div>
+
+    <pre id="log"></pre>
+  </section>
+</main>
+
+<footer>
+  Made by sa1 for Endless
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
